@@ -39,7 +39,7 @@ var bio = {
         $("#header").append(HTMLskillsStart);
         for (var i = 0; i < bio.skills.length; i++) {
             mySkills = HTMLskills.replace("%data%", bio.skills[i]);
-            $("#header").append(mySkills);
+            $("#skills").append(mySkills);
         }
         //$("#header").append(mySkills);
         $("#footerContacts").append(myPhone);
