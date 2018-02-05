@@ -11,7 +11,7 @@ var bio = {
         twitter: "http://www.twitter.com/niassa",
         location: "Parker, Colorado, US"
     },
-    welcomeMessage: "Welcome to my Résumé!",
+    welcomeMessage: "Hi, I'm Michelle. Stitch is my spirit animal. What/who is yours?",
     skills: ["HTML", "CSS", "JS", "Photoshop", "Illustrator", "InDesign"],
     bioPic: "images/me.jpg",
     display: function() {
