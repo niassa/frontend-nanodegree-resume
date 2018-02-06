@@ -13,7 +13,7 @@ var bio = {
     },
     welcomeMessage: "Hi, I'm Michelle. Stitch is my spirit animal. What/who is yours?",
     skills: ["HTML", "CSS", "JS", "Photoshop", "Illustrator", "InDesign"],
-    bioPic: "images/me.jpg",
+    biopic: "images/me.jpg",
     display: function() {
         var formattedName = HTMLheaderName.replace("%data%", bio.name);
         var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
@@ -24,16 +24,16 @@ var bio = {
         var myLoc = HTMLlocation.replace("%data%", bio.contacts.location);
         var myMsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
         var mySkills = HTMLskills.replace("%data%", bio.skills);
-        var myBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+        var myBioPic = HTMLbioPic.replace("%data%", bio.biopic);
         //myEmail = myEmail.attr("a href", "mailto:me@me.com");
 
         $("#header").append(formattedName);
         $("#header").append(formattedRole);
-        $("#topContacts").append(myPhone);
-        $("#topContacts").append(myEmail);
-        $("#topContacts").append(myGit);
-        $("#topContacts").append(myTwit);
-        $("#topContacts").append(myLoc);
+        $("#topContacts", "#footerContacts").append(myPhone);
+        $("#topContacts", "#footerContacts").append(myEmail);
+        $("#topContacts", "#footerContacts").append(myGit);
+        $("#topContacts", "#footerContacts").append(myTwit);
+        $("#topContacts", "#footerContacts").append(myLoc);
         $("#header").append(myMsg);
         $("#header").append(myBioPic);
         $("#header").append(HTMLskillsStart);
@@ -41,12 +41,6 @@ var bio = {
             mySkills = HTMLskills.replace("%data%", bio.skills[i]);
             $("#skills").append(mySkills);
         }
-        //$("#header").append(mySkills);
-        $("#footerContacts").append(myPhone);
-        $("#footerContacts").append(myEmail);
-        $("#footerContacts").append(myGit);
-        $("#footerContacts").append(myTwit);
-        $("#footerContacts").append(myLoc);
     }
 };
 
@@ -75,17 +69,14 @@ var education = {
         url: "http://www.udacity.com"
     }],
     display: function() {
-        $("#education").append(HTMLschoolStart);
-
         for (var i = 0; i < education.schools.length; i++) {
             var formatName = HTMLschoolName.replace("%data%", education.schools[i].name);
-            //formatName = formatName.replace("#", education.schools[i].url);
             var formatDegree = HTMLschoolDegree.replace("%data%", education.schools[i].degree);
             var formatDates = HTMLschoolDates.replace("%data%", education.schools[i].dates);
             var formatLoc = HTMLschoolLocation.replace("%data%", education.schools[i].location);
             var formatMajor = HTMLschoolMajor.replace("%data%", education.schools[i].majors);
-            $(".education-entry:last").append(formatName);
-            $(".education-entry:last").append(formatDegree);
+            $("#education").append(HTMLschoolStart);
+            $(".education-entry:last").append(formatName + formatDegree);
             $(".education-entry:last").append(formatDates);
             $(".education-entry:last").append(formatLoc);
             $(".education-entry:last").append(formatMajor);
@@ -99,8 +90,7 @@ var education = {
             var formatOdates = HTMLonlineDates.replace("%data%", education.onlineCourses[j].dates);
             var formatOurl = HTMLonlineURL.replace("%data%", education.onlineCourses[j].url);
             $("#education").append(HTMLschoolStart);
-            $(".education-entry:last").append(formatOtitle);
-            $(".education-entry:last").append(formatOschool);
+            $(".education-entry:last").append(formatOtitle + formatOschool);
             $(".education-entry:last").append(formatOdates);
             $(".education-entry:last").append(formatOurl);
         }
