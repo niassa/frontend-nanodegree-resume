@@ -29,11 +29,11 @@ var bio = {
 
         $("#header").append(formattedName);
         $("#header").append(formattedRole);
-        $("#topContacts", "#footerContacts").append(myPhone);
-        $("#topContacts", "#footerContacts").append(myEmail);
-        $("#topContacts", "#footerContacts").append(myGit);
-        $("#topContacts", "#footerContacts").append(myTwit);
-        $("#topContacts", "#footerContacts").append(myLoc);
+        $("#topContacts, #footerContacts").append(myPhone);
+        $("#topContacts, #footerContacts").append(myEmail);
+        $("#topContacts, #footerContacts").append(myGit);
+        $("#topContacts, #footerContacts").append(myTwit);
+        $("#topContacts, #footerContacts").append(myLoc);
         $("#header").append(myMsg);
         $("#header").append(myBioPic);
         $("#header").append(HTMLskillsStart);
